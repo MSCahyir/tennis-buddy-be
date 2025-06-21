@@ -10,7 +10,7 @@ public class RegisterRequestDto
 
     [Required]
     [MinLength(2)]
-    public string Name { get; set; } = string.Empty;
+    public string FullName { get; set; } = string.Empty;
 
     [Required]
     [MinLength(6)]

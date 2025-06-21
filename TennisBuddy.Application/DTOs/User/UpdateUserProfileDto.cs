@@ -5,7 +5,7 @@ namespace TennisBuddy.Application.DTOs.User;
 public class UpdateUserProfileDto
 {
     [StringLength(100)]
-    public string? Name { get; set; }
+    public string? FullName { get; set; }
 
     [StringLength(100)]
     public string? Location { get; set; }

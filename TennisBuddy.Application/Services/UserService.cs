@@ -36,8 +36,8 @@ public class UserService : IUserService
         }
 
         // Update only provided fields
-        if (!string.IsNullOrEmpty(updateDto.Name))
-            user.Name = updateDto.Name;
+        if (!string.IsNullOrEmpty(updateDto.FullName))
+            user.FullName = updateDto.FullName;
 
         if (updateDto.Location != null)
             user.Location = updateDto.Location;
@@ -150,7 +150,7 @@ public class UserService : IUserService
         {
             Id = user.Id,
             Email = user.Email,
-            Name = user.Name,
+            FullName = user.FullName,
             ProfilePicture = user.ProfilePicture,
             Location = user.Location,
             PhoneNumber = user.PhoneNumber,

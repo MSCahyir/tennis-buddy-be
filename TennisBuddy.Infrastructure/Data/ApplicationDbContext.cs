@@ -29,7 +29,7 @@ public class ApplicationDbContext : DbContext
                 .IsRequired()
                 .HasMaxLength(256);
 
-            entity.Property(e => e.Name)
+            entity.Property(e => e.FullName)
                 .IsRequired()
                 .HasMaxLength(100);
 

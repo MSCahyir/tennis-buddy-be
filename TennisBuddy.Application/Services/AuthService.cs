@@ -62,7 +62,7 @@ public class AuthService : IAuthService
         {
             Id = Guid.NewGuid().ToString(),
             Email = registerRequest.Email,
-            Name = registerRequest.Name,
+            FullName = registerRequest.FullName,
             PasswordHash = HashPassword(registerRequest.Password),
             CreatedAt = DateTime.UtcNow,
             IsActive = true
@@ -113,7 +113,7 @@ public class AuthService : IAuthService
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.Name, user.Name)
+                new Claim(ClaimTypes.Name, user.FullName)
             }),
             Expires = DateTime.UtcNow.AddDays(7),
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
@@ -139,7 +139,7 @@ public class AuthService : IAuthService
         {
             Id = user.Id,
             Email = user.Email,
-            Name = user.Name,
+            FullName = user.FullName,
             ProfilePicture = user.ProfilePicture,
             Location = user.Location,
             PhoneNumber = user.PhoneNumber,

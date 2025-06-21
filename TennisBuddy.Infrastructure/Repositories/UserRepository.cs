@@ -72,7 +72,7 @@ public class UserRepository : IUserRepository
     {
         return await _context.Users
             .Where(u => u.IsActive && u.Location != null && u.Location.ToLower().Contains(location.ToLower()))
-            .OrderBy(u => u.Name)
+            .OrderBy(u => u.FullName)
             .ToListAsync();
     }
 
@@ -80,7 +80,7 @@ public class UserRepository : IUserRepository
     {
         return await _context.Users
             .Where(u => u.IsActive && u.SkillLevel == skillLevel)
-            .OrderBy(u => u.Name)
+            .OrderBy(u => u.FullName)
             .ToListAsync();
     }
 
@@ -89,7 +89,7 @@ public class UserRepository : IUserRepository
         return await _context.Users
             .Where(u => u.IsActive && u.SkillLevel >= minSkillLevel && u.SkillLevel <= maxSkillLevel)
             .OrderBy(u => u.SkillLevel)
-            .ThenBy(u => u.Name)
+            .ThenBy(u => u.FullName)
             .ToListAsync();
     }
 }
