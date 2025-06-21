@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "LTijLOVrlWLvfztkDq5sB978UrVVapPScdNFysOH+/6ZXausHOjjQhSmLe5jF3Tw0N0ppilrDP/8egQcLZp68g==",
+  "success": true,
+  "projectFilePath": "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/TennisBuddy.Application.csproj",
+  "expectedPackageFiles": [
+    "/Users/sefacahyir/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
+    "/Users/sefacahyir/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
+    "/Users/sefacahyir/.nuget/packages/microsoft.extensions.configuration.abstractions/7.0.0/microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
+    "/Users/sefacahyir/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "/Users/sefacahyir/.nuget/packages/microsoft.identitymodel.abstractions/6.35.0/microsoft.identitymodel.abstractions.6.35.0.nupkg.sha512",
+    "/Users/sefacahyir/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.35.0/microsoft.identitymodel.jsonwebtokens.6.35.0.nupkg.sha512",
+    "/Users/sefacahyir/.nuget/packages/microsoft.identitymodel.logging/6.35.0/microsoft.identitymodel.logging.6.35.0.nupkg.sha512",
+    "/Users/sefacahyir/.nuget/packages/microsoft.identitymodel.tokens/6.35.0/microsoft.identitymodel.tokens.6.35.0.nupkg.sha512",
+    "/Users/sefacahyir/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/Users/sefacahyir/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "/Users/sefacahyir/.nuget/packages/system.identitymodel.tokens.jwt/6.35.0/system.identitymodel.tokens.jwt.6.35.0.nupkg.sha512",
+    "/Users/sefacahyir/.nuget/packages/system.runtime/4.3.0/system.runtime.4.3.0.nupkg.sha512",
+    "/Users/sefacahyir/.nuget/packages/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512",
+    "/Users/sefacahyir/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
+    "/Users/sefacahyir/.nuget/packages/system.text.encodings.web/4.7.2/system.text.encodings.web.4.7.2.nupkg.sha512",
+    "/Users/sefacahyir/.nuget/packages/system.text.json/4.7.2/system.text.json.4.7.2.nupkg.sha512"
+  ],
+  "logs": []
+}

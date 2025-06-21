@@ -1,0 +1,15 @@
+/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/bin/Debug/net7.0/TennisBuddy.Application.deps.json
+/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/bin/Debug/net7.0/TennisBuddy.Application.dll
+/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/bin/Debug/net7.0/TennisBuddy.Application.pdb
+/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/bin/Debug/net7.0/TennisBuddy.Domain.dll
+/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/bin/Debug/net7.0/TennisBuddy.Domain.pdb
+/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/Debug/net7.0/TennisBuddy.Application.csproj.AssemblyReference.cache
+/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/Debug/net7.0/TennisBuddy.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/Debug/net7.0/TennisBuddy.Application.AssemblyInfoInputs.cache
+/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/Debug/net7.0/TennisBuddy.Application.AssemblyInfo.cs
+/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/Debug/net7.0/TennisBuddy.Application.csproj.CoreCompileInputs.cache
+/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/Debug/net7.0/TennisBuddy.Application.csproj.CopyComplete
+/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/Debug/net7.0/TennisBuddy.Application.dll
+/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/Debug/net7.0/refint/TennisBuddy.Application.dll
+/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/Debug/net7.0/TennisBuddy.Application.pdb
+/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/Debug/net7.0/ref/TennisBuddy.Application.dll

@@ -1,0 +1,296 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Api/TennisBuddy.Api.csproj": {}
+  },
+  "projects": {
+    "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Api/TennisBuddy.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Api/TennisBuddy.Api.csproj",
+        "projectName": "TennisBuddy.Api",
+        "projectPath": "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Api/TennisBuddy.Api.csproj",
+        "packagesPath": "/Users/sefacahyir/.nuget/packages/",
+        "outputPath": "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/sefacahyir/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/TennisBuddy.Application.csproj": {
+                "projectPath": "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/TennisBuddy.Application.csproj"
+              },
+              "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Infrastructure/TennisBuddy.Infrastructure.csproj": {
+                "projectPath": "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Infrastructure/TennisBuddy.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.18, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.410/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/TennisBuddy.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/TennisBuddy.Application.csproj",
+        "projectName": "TennisBuddy.Application",
+        "projectPath": "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/TennisBuddy.Application.csproj",
+        "packagesPath": "/Users/sefacahyir/.nuget/packages/",
+        "outputPath": "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/sefacahyir/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Domain/TennisBuddy.Domain.csproj": {
+                "projectPath": "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Domain/TennisBuddy.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.35.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.35.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.410/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Domain/TennisBuddy.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Domain/TennisBuddy.Domain.csproj",
+        "projectName": "TennisBuddy.Domain",
+        "projectPath": "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Domain/TennisBuddy.Domain.csproj",
+        "packagesPath": "/Users/sefacahyir/.nuget/packages/",
+        "outputPath": "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/sefacahyir/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.410/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Infrastructure/TennisBuddy.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Infrastructure/TennisBuddy.Infrastructure.csproj",
+        "projectName": "TennisBuddy.Infrastructure",
+        "projectPath": "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Infrastructure/TennisBuddy.Infrastructure.csproj",
+        "packagesPath": "/Users/sefacahyir/.nuget/packages/",
+        "outputPath": "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/sefacahyir/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Domain/TennisBuddy.Domain.csproj": {
+                "projectPath": "/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Domain/TennisBuddy.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.18, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.410/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
