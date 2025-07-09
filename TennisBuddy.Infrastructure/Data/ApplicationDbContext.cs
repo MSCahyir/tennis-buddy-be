@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using TennisBuddy.Domain.Entities;
-using System.Text.Json;
 
 namespace TennisBuddy.Infrastructure.Data;
 
@@ -16,64 +15,39 @@ public class ApplicationDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        // User entity configuration
+        // Only configure what Data Annotations can't handle
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id);
+            // Unique constraint
+            entity.HasIndex(e => e.Email).IsUnique();
 
-            entity.Property(e => e.Id)
-                .IsRequired()
-                .HasMaxLength(36);
-
-            entity.Property(e => e.Email)
-                .IsRequired()
-                .HasMaxLength(256);
-
-            entity.Property(e => e.FullName)
-                .IsRequired()
-                .HasMaxLength(100);
-
-            entity.Property(e => e.PasswordHash)
-                .IsRequired()
-                .HasMaxLength(256);
-
-            entity.Property(e => e.ProfilePicture)
-                .HasMaxLength(500);
-
-            entity.Property(e => e.Location)
-                .HasMaxLength(100);
-
-            entity.Property(e => e.PhoneNumber)
-                .HasMaxLength(20);
-
-            entity.Property(e => e.SkillLevel)
-                .HasDefaultValue(null);
-
-            // Configure PreferredPlayTimes as JSON (PostgreSQL native JSON support)
-            entity.Property(e => e.PreferredPlayTimes)
-                .HasColumnType("jsonb")
-                .HasConversion(
-                    v => v == null ? null : JsonSerializer.Serialize(v, (JsonSerializerOptions?)null),
-                    v => v == null ? null : JsonSerializer.Deserialize<List<string>>(v, (JsonSerializerOptions?)null));
-
-            entity.Property(e => e.CreatedAt)
-                .HasDefaultValueSql("CURRENT_TIMESTAMP");
-
-            entity.Property(e => e.LastLoginAt)
-                .HasDefaultValue(null);
-
-            entity.Property(e => e.IsActive)
-                .HasDefaultValue(true);
-
-            // Indexes
-            entity.HasIndex(e => e.Email)
-                .IsUnique();
-
+            // Performance indexes
             entity.HasIndex(e => e.CreatedAt);
-
             entity.HasIndex(e => e.Location);
-
             entity.HasIndex(e => e.SkillLevel);
+            entity.HasIndex(e => e.IsActive);
+            entity.HasIndex(e => e.IsOnline);
+
+            // JSON conversion for complex types
+            entity.Property(e => e.PreferredPlayTimes)
+                .HasConversion(
+                    v => v == null ? null : System.Text.Json.JsonSerializer.Serialize(v, (System.Text.Json.JsonSerializerOptions?)null),
+                    v => v == null ? null : System.Text.Json.JsonSerializer.Deserialize<List<string>>(v, (System.Text.Json.JsonSerializerOptions?)null));
+
+            entity.Property(e => e.PreferredCourtTypes)
+                .HasConversion(
+                    v => v == null ? null : System.Text.Json.JsonSerializer.Serialize(v, (System.Text.Json.JsonSerializerOptions?)null),
+                    v => v == null ? null : System.Text.Json.JsonSerializer.Deserialize<List<string>>(v, (System.Text.Json.JsonSerializerOptions?)null));
+
+            entity.Property(e => e.PlayingStyles)
+                .HasConversion(
+                    v => v == null ? null : System.Text.Json.JsonSerializer.Serialize(v, (System.Text.Json.JsonSerializerOptions?)null),
+                    v => v == null ? null : System.Text.Json.JsonSerializer.Deserialize<List<string>>(v, (System.Text.Json.JsonSerializerOptions?)null));
+
+            entity.Property(e => e.CourtTypePreferences)
+                .HasConversion(
+                    v => v == null ? null : System.Text.Json.JsonSerializer.Serialize(v, (System.Text.Json.JsonSerializerOptions?)null),
+                    v => v == null ? null : System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, int>>(v, (System.Text.Json.JsonSerializerOptions?)null));
         });
     }
 }

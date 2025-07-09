@@ -9,3 +9,5 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TennisBuddy.Infrastructure
 build_property.ProjectDir = /Users/sefacahyir/tennis-buddy-be/TennisBuddy.Infrastructure/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

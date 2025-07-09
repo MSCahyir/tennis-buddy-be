@@ -1,3 +1,4 @@
+using AutoMapper;
 using TennisBuddy.Application.DTOs;
 using TennisBuddy.Application.DTOs.User;
 using TennisBuddy.Application.Services.Interfaces;
@@ -9,25 +10,21 @@ namespace TennisBuddy.Application.Services;
 public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
+    private readonly IMapper _mapper;
 
-    public UserService(IUserRepository userRepository)
+    public UserService(IUserRepository userRepository, IMapper mapper)
     {
         _userRepository = userRepository;
+        _mapper = mapper;
     }
 
-    public async Task<UserDto?> GetUserByIdAsync(string userId)
+    public async Task<UserProfileDto?> GetUserProfileByIdAsync(string userId)
     {
         var user = await _userRepository.GetByIdAsync(userId);
-        return user != null ? MapToUserDto(user) : null;
+        return user != null ? _mapper.Map<UserProfileDto>(user) : null;
     }
 
-    public async Task<List<UserDto>> GetAllUsersAsync()
-    {
-        var users = await _userRepository.GetAllAsync();
-        return users.Select(MapToUserDto).ToList();
-    }
-
-    public async Task<UserDto?> UpdateUserProfileAsync(string userId, UpdateUserProfileDto updateDto)
+    public async Task<UserProfileDto?> UpdateUserProfileAsync(string userId, UpdateUserProfileDto updateDto)
     {
         var user = await _userRepository.GetByIdAsync(userId);
         if (user == null)
@@ -35,27 +32,11 @@ public class UserService : IUserService
             return null;
         }
 
-        // Update only provided fields
-        if (!string.IsNullOrEmpty(updateDto.FullName))
-            user.FullName = updateDto.FullName;
-
-        if (updateDto.Location != null)
-            user.Location = updateDto.Location;
-
-        if (updateDto.PhoneNumber != null)
-            user.PhoneNumber = updateDto.PhoneNumber;
-
-        if (updateDto.SkillLevel.HasValue)
-            user.SkillLevel = updateDto.SkillLevel;
-
-        if (updateDto.PreferredPlayTimes != null)
-            user.PreferredPlayTimes = updateDto.PreferredPlayTimes;
-
-        if (updateDto.ProfilePicture != null)
-            user.ProfilePicture = updateDto.ProfilePicture;
+        // Use AutoMapper to update only non-null properties
+        _mapper.Map(updateDto, user);
 
         var updatedUser = await _userRepository.UpdateAsync(user);
-        return MapToUserDto(updatedUser);
+        return _mapper.Map<UserProfileDto>(updatedUser);
     }
 
     public async Task<UserSearchResultDto> SearchUsersAsync(UserSearchDto searchDto)
@@ -97,12 +78,14 @@ public class UserService : IUserService
         var paginatedUsers = filteredUsers
             .Skip((searchDto.PageNumber - 1) * searchDto.PageSize)
             .Take(searchDto.PageSize)
-            .Select(MapToUserDto)
             .ToList();
+
+        var userProfileDtos = _mapper.Map<List<UserProfileDto>>(paginatedUsers);
+        var userDtos = _mapper.Map<List<UserDto>>(userProfileDtos);
 
         return new UserSearchResultDto
         {
-            Users = paginatedUsers,
+            Users = userDtos,
             TotalCount = totalCount,
             PageNumber = searchDto.PageNumber,
             PageSize = searchDto.PageSize,
@@ -117,46 +100,26 @@ public class UserService : IUserService
         return await _userRepository.DeleteAsync(userId);
     }
 
-    public async Task<List<UserDto>> GetNearbyUsersAsync(string currentUserId, string location, int radiusKm = 10)
+    public async Task<List<UserProfileDto>> GetNearbyUsersAsync(string currentUserId, string location, int radiusKm = 10)
     {
         var users = await _userRepository.GetByLocationAsync(location);
-        return users
-            .Where(u => u.Id != currentUserId)
-            .Select(MapToUserDto)
-            .ToList();
+        var filteredUsers = users.Where(u => u.Id != currentUserId).ToList();
+        return _mapper.Map<List<UserProfileDto>>(filteredUsers);
     }
 
-    public async Task<List<UserDto>> GetUsersBySimilarSkillLevelAsync(string currentUserId, int skillLevelRange = 2)
+    public async Task<List<UserProfileDto>> GetUsersBySimilarSkillLevelAsync(string currentUserId, int skillLevelRange = 2)
     {
         var currentUser = await _userRepository.GetByIdAsync(currentUserId);
         if (currentUser?.SkillLevel == null)
         {
-            return new List<UserDto>();
+            return new List<UserProfileDto>();
         }
 
         var minSkill = Math.Max(1, currentUser.SkillLevel.Value - skillLevelRange);
         var maxSkill = Math.Min(10, currentUser.SkillLevel.Value + skillLevelRange);
 
         var users = await _userRepository.GetBySkillLevelRangeAsync(minSkill, maxSkill);
-        return users
-            .Where(u => u.Id != currentUserId)
-            .Select(MapToUserDto)
-            .ToList();
-    }
-
-    private static UserDto MapToUserDto(User user)
-    {
-        return new UserDto
-        {
-            Id = user.Id,
-            Email = user.Email,
-            FullName = user.FullName,
-            ProfilePicture = user.ProfilePicture,
-            Location = user.Location,
-            PhoneNumber = user.PhoneNumber,
-            SkillLevel = user.SkillLevel,
-            PreferredPlayTimes = user.PreferredPlayTimes,
-            CreatedAt = user.CreatedAt
-        };
+        var filteredUsers = users.Where(u => u.Id != currentUserId).ToList();
+        return _mapper.Map<List<UserProfileDto>>(filteredUsers);
     }
 }

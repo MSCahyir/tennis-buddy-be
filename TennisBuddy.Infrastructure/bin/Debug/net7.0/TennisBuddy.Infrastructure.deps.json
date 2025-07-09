@@ -237,7 +237,10 @@
       },
       "TennisBuddy.Domain/1.0.0": {
         "runtime": {
-          "TennisBuddy.Domain.dll": {}
+          "TennisBuddy.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

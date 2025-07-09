@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TennisBuddy.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+79d0458813c109532f025d0583d311ba026aed19")]
 [assembly: System.Reflection.AssemblyProductAttribute("TennisBuddy.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TennisBuddy.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,6 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using AutoMapper;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using TennisBuddy.Application.DTOs;
@@ -15,11 +16,14 @@ public class AuthService : IAuthService
 {
     private readonly IUserRepository _userRepository;
     private readonly IConfiguration _configuration;
+    private readonly IMapper _mapper;
 
-    public AuthService(IUserRepository userRepository, IConfiguration configuration)
+    public AuthService(IUserRepository userRepository, IConfiguration configuration, IMapper mapper)
     {
         _userRepository = userRepository;
         _configuration = configuration;
+        _mapper = mapper;
+
     }
 
     public async Task<LoginResponseDto?> LoginAsync(LoginRequestDto loginRequest)
@@ -52,24 +56,17 @@ public class AuthService : IAuthService
 
     public async Task<UserDto?> RegisterAsync(RegisterRequestDto registerRequest)
     {
-        // Check if user already exists
-        if (await _userRepository.ExistsAsync(registerRequest.Email))
+        var existingUser = await _userRepository.GetByEmailAsync(registerRequest.Email);
+        if (existingUser != null)
         {
             return null;
         }
 
-        var user = new User
-        {
-            Id = Guid.NewGuid().ToString(),
-            Email = registerRequest.Email,
-            FullName = registerRequest.FullName,
-            PasswordHash = HashPassword(registerRequest.Password),
-            CreatedAt = DateTime.UtcNow,
-            IsActive = true
-        };
+        var user = _mapper.Map<User>(registerRequest);
+        user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(registerRequest.Password);
 
         var createdUser = await _userRepository.CreateAsync(user);
-        return MapToUserDto(createdUser);
+        return _mapper.Map<UserDto>(createdUser);
     }
 
     public async Task<bool> ValidateTokenAsync(string token)
@@ -113,7 +110,7 @@ public class AuthService : IAuthService
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.Name, user.FullName)
+                new Claim(ClaimTypes.Name, $"{user.FirstName} {user.LastName}"),
             }),
             Expires = DateTime.UtcNow.AddDays(7),
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
@@ -139,7 +136,8 @@ public class AuthService : IAuthService
         {
             Id = user.Id,
             Email = user.Email,
-            FullName = user.FullName,
+            FirstName = user.FirstName,
+            LastName = user.LastName,
             ProfilePicture = user.ProfilePicture,
             Location = user.Location,
             PhoneNumber = user.PhoneNumber,

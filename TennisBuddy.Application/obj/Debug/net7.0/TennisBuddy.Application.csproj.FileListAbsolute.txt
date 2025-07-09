@@ -8,7 +8,8 @@
 /Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/Debug/net7.0/TennisBuddy.Application.AssemblyInfoInputs.cache
 /Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/Debug/net7.0/TennisBuddy.Application.AssemblyInfo.cs
 /Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/Debug/net7.0/TennisBuddy.Application.csproj.CoreCompileInputs.cache
-/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/Debug/net7.0/TennisBuddy.Application.csproj.CopyComplete
+/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/Debug/net7.0/TennisBuddy.Application.sourcelink.json
+/Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/Debug/net7.0/TennisBu.4BB9FB37.Up2Date
 /Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/Debug/net7.0/TennisBuddy.Application.dll
 /Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/Debug/net7.0/refint/TennisBuddy.Application.dll
 /Users/sefacahyir/tennis-buddy-be/TennisBuddy.Application/obj/Debug/net7.0/TennisBuddy.Application.pdb

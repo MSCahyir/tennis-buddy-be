@@ -8,11 +8,16 @@ using TennisBuddy.Application.Services.Interfaces;
 using TennisBuddy.Domain.Interfaces;
 using TennisBuddy.Infrastructure.Data;
 using TennisBuddy.Infrastructure.Repositories;
+using TennisBuddy.Application.Mappings;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
+
+// Configure AutoMapper
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 // Database - PostgreSQL
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -24,7 +29,6 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 // Services
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>(); // Add this line
-
 
 // JWT Authentication
 var jwtSecret = builder.Configuration["Jwt:Secret"];
