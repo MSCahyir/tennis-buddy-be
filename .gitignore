@@ -432,3 +432,7 @@ Migrations/
 
 # Secrets
 secrets.json
+
+# Ignore build output directories
+TennisBuddy.Api/obj/Debug
+TennisBuddy.Api/obj/Release
