@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TennisBuddy.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+79d0458813c109532f025d0583d311ba026aed19")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+021a8cbcd8cf4b9689196a196e10948729891f76")]
 [assembly: System.Reflection.AssemblyProductAttribute("TennisBuddy.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TennisBuddy.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
