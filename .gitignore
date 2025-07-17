@@ -433,8 +433,67 @@ Migrations/
 # Secrets
 secrets.json
 
-# Ignore build output directories
-TennisBuddy.Api/obj/Debug
-TennisBuddy.Api/obj/Release
-TennisBuddy.Api/bin/Debug
-TennisBuddy.Api/bin/Release
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.development
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Entity Framework
+Migrations/
+!Migrations/.gitkeep
+
+# Application specific
+appsettings.Production.json
+appsettings.Staging.json
+logs/
+*.log
