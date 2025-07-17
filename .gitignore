@@ -436,3 +436,5 @@ secrets.json
 # Ignore build output directories
 TennisBuddy.Api/obj/Debug
 TennisBuddy.Api/obj/Release
+TennisBuddy.Api/bin/Debug
+TennisBuddy.Api/bin/Release
